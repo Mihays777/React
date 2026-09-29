@@ -131,3 +131,39 @@ main {
 .actions button:active {
   transform: translateY(0);
 }
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.post-form input,
+.post-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.post-form textarea {
+  min-height: 100px;
+  resize: none;
+  field-sizing: content;
+}
+
+.post-form button {
+  padding: 10px;
+  font-size: 16px;
+  background: #2c4068;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.post-form button:hover {
+  background: #212e4d;
+}

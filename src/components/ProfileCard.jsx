@@ -41,13 +41,19 @@ function ProfileCard() {
         setText("");
     }
 
+    function deletePost(id) {
+        setPosts(
+            posts.filter((post) => post.id !== id
+        ));
+    }
+
     return (
     <section className="profile-card">
         <div className="profile">
-            <div className="avatar">avatar</div>
+            <img className="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSev3k5sOvmVP5HMFm3b33x3DSz4Q6MqT3uqjyRE8PCdQ&s" alt="avatar" />
             <div className="profile-info">
-                <h2>Name</h2>
-                <p>@nickname</p>
+                <h2>Mihail</h2>
+                <p>@litvin</p>
             </div>
         </div>
 
@@ -59,7 +65,7 @@ function ProfileCard() {
                 onChange={(event) => setTitle(event.target.value)}
             />
             <textarea
-                placeholder="текст для поста"
+                placeholder="Текст для поста"
                 value={text}
                 onChange={(event) => setText(event.target.value)}
             />
@@ -67,13 +73,19 @@ function ProfileCard() {
                 Опубликовать
             </button>
         </form>
-        {posts.map((post) => (
+
+        {posts.length > 0 ? (
+        posts.map((post) => (
             <Post
-            key={post.id}
+            id={post.id}
             author={post.author}
             title={post.title}
-            text={post.text} />    
-        ))}
+            text={post.text}
+            onDelete={deletePost} />    
+        ))
+    ) : (
+        <p className="empty-message">Опубликуйте первый пост</p>
+    )}
 
     </section>
     )
