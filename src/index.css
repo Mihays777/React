@@ -49,6 +49,14 @@ main {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+.feed {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
 .profile {
   display: flex;
   align-items: center;
@@ -166,4 +174,21 @@ main {
 
 .post-form button:hover {
   background: #212e4d;
+}
+
+.delete-button {
+  background: #fee2e2;
+  color: #dc2626;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.delete-button:hover {
+  background: #fca5a5;
+  color: #991b1b;
+  transform: translateY(-2px);
+}
+
+.delete-button:active {
+  transform: translateY(0);
 }

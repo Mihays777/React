@@ -6,10 +6,10 @@ function Actions() {
     return (
         <div className="actions">
             <button onClick={() => setLikes(likes + 1)}>
-                &#10084;{likes}
+                ❤{likes}
             </button>
             <button onClick={() => setReposts(reposts + 1)}>
-                &#128017;{reposts}
+                🔁{reposts}
             </button>
         </div>
     )

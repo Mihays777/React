@@ -1,6 +1,6 @@
 import Actions from "./Actions"
 
-function Post({author, title, text, onDelete, id}) {
+function Post({ id, author, title, text, onDelete }) {
     return (
         <div>
             <article className="post">
@@ -10,11 +10,13 @@ function Post({author, title, text, onDelete, id}) {
 
                 <Actions />
 
-                <button
-                    className="delete-button"
-                    onClick={() => onDelete(id)}>
-                    Удалить
-                </button>
+                {onDelete && (
+                    <button
+                        className="delete-button"
+                        onClick={() => onDelete(id)}>
+                        Удалить
+                    </button>
+                )}
             </article>
         </div>
     )
